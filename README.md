@@ -20,7 +20,7 @@
 
 ### Шаг 1. Подготовьте файлы проекта
 1. Cкачайте файлы расширения с GitHub или
-[отсюда](https://drive.google.com/uc?export=download&id=1f1d2c5wrJ_25_U1n2NM8bWbrZZHN08e_)
+[отсюда](https://drive.google.com/uc?export=download&id=1f1d2c5wrJ_25_U1n2NM8bWbrZZHN08e-)
 и распакуйте их в любую удобную папку на компьютере.
 2. Убедитесь, что в корне этой папки находятся файлы `manifest.json`, `content.js`, `styles.css` и остальные компоненты проекта.
 
