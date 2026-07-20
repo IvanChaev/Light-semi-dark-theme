@@ -1,0 +1,27 @@
+/* Этот класс скрипт добавит ТОЛЬКО если сайт светлый */
+html.apply-smart-dark {
+  filter: invert(1) hue-rotate(180deg) contrast(0.9) brightness(0.9) !important;
+  background: #fff !important; 
+}
+
+/* Возвращаем медиа-контент в нормальный вид */
+html.apply-smart-dark img, 
+html.apply-smart-dark video, 
+html.apply-smart-dark canvas, 
+html.apply-smart-dark svg,
+html.apply-smart-dark [style*="background-image"] {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Накладываем поверх аккуратный серый тон, чтобы убрать ядовитый контраст */
+html.apply-smart-dark::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(40, 44, 52, 0.05) !important;
+  pointer-events: none;
+  z-index: 99999999;
+}

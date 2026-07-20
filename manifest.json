@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Dark Gray",
+  "version": "1.3",
+  "description": "Автоматически затемняет только светлые сайты, не ломая темные темы. Поддерживает список исключений.",
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Smart Dark Gray"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

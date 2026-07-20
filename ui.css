@@ -1,0 +1,116 @@
+:root {
+  --bg-color: #f7f9fb;
+  --text-color: #1a1a1a;
+  --hint-color: #555;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --input-text: #1a1a1a;
+  --btn-bg: #2d6cdf;
+  --btn-text: #ffffff;
+  --btn-secondary-bg: #e2e8f0;
+  --btn-secondary-text: #1a1a1a;
+  --status-ok: #1a7f37;
+  --status-error: #d32f2f;
+  --dashed-border: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1c1b22;
+    --text-color: #fbfbfe;
+    --hint-color: #b1b1b3;
+    --input-bg: #2b2a33;
+    --input-border: #52525e;
+    --input-text: #fbfbfe;
+    --btn-bg: #4c8bf5;
+    --btn-text: #ffffff;
+    --btn-secondary-bg: #3a3942;
+    --btn-secondary-text: #fbfbfe;
+    --status-ok: #6fcf97;
+    --status-error: #ff6b6b;
+    --dashed-border: #52525e;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text-color);
+  background: var(--bg-color);
+  margin: 0;
+  padding: 16px;
+}
+
+h3, h1 {
+  margin-top: 0;
+}
+
+p, code {
+  color: var(--hint-color);
+}
+
+code {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+textarea, input[type="number"], input[type="text"] {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 13px;
+  padding: 6px 8px;
+}
+
+textarea {
+  font-family: monospace;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+a {
+  color: var(--btn-bg);
+}
+
+#status,
+.status {
+  font-size: 12px;
+  color: var(--status-ok);
+}
+
+.status-error {
+  color: var(--status-error) !important;
+}
+
+.importBox {
+  border: 2px dashed var(--dashed-border);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  margin: 16px 0;
+}
