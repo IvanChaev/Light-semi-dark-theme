@@ -1,6 +1,12 @@
-/* Этот класс скрипт добавит ТОЛЬКО если сайт светлый */
+/* Этот класс скрипт добавит ТОЛЬКО если сайт светлый.
+   Значения --smart-dark-contrast / --smart-dark-brightness / --smart-dark-overlay
+   выставляются один раз content.js при инициализации на основе слайдера
+   "интенсивность" в настройках. Фоллбэки ниже соответствуют старым дефолтам,
+   на случай если скрипт по какой-то причине не успел их проставить. */
 html.apply-smart-dark {
-  filter: invert(1) hue-rotate(180deg) contrast(0.9) brightness(0.9) !important;
+  filter: invert(1) hue-rotate(180deg)
+    contrast(var(--smart-dark-contrast, 0.9))
+    brightness(var(--smart-dark-brightness, 0.9)) !important;
   background: #fff !important; 
 }
 
@@ -21,7 +27,7 @@ html.apply-smart-dark::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(40, 44, 52, 0.05) !important;
+  background-color: rgba(40, 44, 52, var(--smart-dark-overlay, 0.05)) !important;
   pointer-events: none;
   z-index: 99999999;
 }

@@ -4,16 +4,124 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="ui.css">
 <style>
-  body { width: 240px; }
-  #host { font-weight: bold; word-break: break-all; margin-bottom: 8px; }
-  button { width: 100%; }
-  a { display: block; margin-top: 10px; font-size: 12px; text-align: center; }
+  body { width: 340px; }
+
+  .host-row {
+    font-weight: bold;
+    word-break: break-all;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  #toggle {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--input-border);
+    margin: 14px 0;
+  }
+
+  .field {
+    margin-bottom: 14px;
+  }
+  .field:last-of-type {
+    margin-bottom: 8px;
+  }
+  .field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .slider-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--btn-bg);
+  }
+  .slider-row span {
+    min-width: 28px;
+    text-align: right;
+    font-size: 12px;
+    color: var(--hint-color);
+    font-variant-numeric: tabular-nums;
+  }
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--hint-color);
+    margin-top: 2px;
+  }
+
+  .footer-link {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  /* Переключатель */
+  .override-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .override-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--btn-bg);
+  }
+  .override-row label {
+    font-size: 12px;
+    font-weight: 500;
+  }
 </style>
 </head>
 <body>
-  <div>Сайт: <span id="host">…</span></div>
+  <div class="host-row">Сайт: <span id="host">…</span></div>
   <button id="toggle" disabled>…</button>
-  <a href="#" id="openOptions">Список исключений</a>
+
+  <hr>
+
+  <!-- Переключатель персональных настроек -->
+  <div class="override-row">
+    <input type="checkbox" id="overrideToggle">
+    <label for="overrideToggle">Свои настройки для этого сайта</label>
+  </div>
+
+  <div class="field">
+    <label for="intensity">Интенсивность затемнения</label>
+    <div class="slider-row">
+      <input type="range" id="intensity" min="0" max="100" step="5" value="50">
+      <span id="intensityValue">50</span>
+    </div>
+    <div class="slider-labels">
+      <span>мягче</span>
+      <span>агрессивнее</span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="threshold">Порог срабатывания</label>
+    <div class="slider-row">
+      <input type="range" id="threshold" min="0" max="255" step="5" value="160">
+      <span id="thresholdValue">160</span>
+    </div>
+    <div class="slider-labels">
+      <span>красит почти всё</span>
+      <span>только явно белые</span>
+    </div>
+  </div>
+
+  <a href="#" id="openOptions" class="footer-link">Список исключений сайтов →</a>
+
   <script src="popup.js"></script>
 </body>
 </html>
